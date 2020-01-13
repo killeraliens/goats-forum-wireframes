@@ -1,0 +1,555 @@
+
+body * {
+    box-sizing: border-box;
+    /* -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;  */
+}
+
+body {
+  font-family: 'Heebo', 'Arial';
+  font-weight: 400;
+  margin: 0px;
+  padding: 0px;
+  background-color: dimgrey;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  font-size: 12px;
+}
+
+.App {
+  display: flex;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.Menu, .Main {
+  height: 100%;
+  overflow: scroll;
+}
+
+.Menu {
+  width: 72px;
+  padding: 1px;
+}
+
+.Menu--pal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Menu--floating {
+  position: fixed;
+  right: 16px;
+  top: 16px;
+}
+
+.Main {
+  width: 100%;
+}
+
+.Main--content {
+  margin: 24px;
+}
+
+@media (max-width: 599px) {
+  .Main--content {
+    margin: 16px;
+  }
+}
+
+.SectionNav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SectionNavLinks li {
+  display: inline;
+}
+
+.SectionNavLinks {
+  padding-left: 0;
+  margin: 0;
+  width: 100%;
+  /* flex-grow: 1; */
+}
+
+.SectionNav--link {
+  display: inline-block;
+  line-height: 24px;
+  padding: 0px 8px;
+  color: white;
+  /* background-color: darkgray; */
+  background-color: rgb(46, 46, 46);
+  margin-left: 0;
+  margin-right: 1px;
+  margin-bottom: 1px;
+}
+
+.SectionNav--link.active {
+  /* background-color: #2e2e2e00; */
+  background-color: whitesmoke;
+  color: black;
+}
+
+li.filler {
+}
+
+.SearchTermForm {
+  /* flex-grow: 1; */
+  width: auto;
+}
+
+
+.ProfileStatus {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 66px;
+}
+
+.ProfileStatus.fixed {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.HeaderNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Main--title {
+  padding-left: 16px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  color: white;
+  font-weight: normal;
+  line-height: 66px;
+  background-color: rgb(46, 46, 46);
+}
+
+.btn-base {
+  color: white;
+  display: flex;
+  justify-content: center;
+  background-color: darkgray;
+  line-height: 30px;
+}
+.SignOut {
+  width: 100%;
+  background-color: orangered;
+}
+/* .SignOut:hover {
+  background-color: red;
+} */
+
+
+/* .Menu--pal--btn.active {
+  background-color: none;
+} */
+
+.Menu--pal--btn.active {
+  background-color: rgb(46, 46, 46);
+}
+
+.Menu--pal--btn {
+  background-color: darkgray;
+  /* color: dimgrey; */
+  color: white;
+  /* width: 100%; */
+  height: 66px;
+  padding: 0;
+  margin-bottom: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 10px;
+  text-align: center;
+}
+
+
+
+.Menu--pal--btn i {
+  font-size: 22px;
+  margin: 4px;
+}
+
+.Feed {
+  column-count: 1;
+  column-gap: 0;
+  min-height: 100%;
+  max-width: 100%;
+  padding-bottom: 60px;
+}
+
+.Feed .Card {
+  break-inside: avoid-column;
+}
+
+@media (min-width: 599px) {
+  .Feed {
+    column-count: 2;
+    column-gap: 16px;
+  }
+}
+
+@media (min-width: 999px) {
+  .Feed {
+    column-count: 3;
+    column-gap: 16px;
+  }
+}
+
+/* Forms */
+form {
+  padding: 32px;
+  background-color: whitesmoke;
+}
+
+legend {
+  padding: 0;
+  display: table;
+}
+fieldset {
+  border: 0;
+  padding: 0.01em 0 0 0;
+  margin: 0;
+  margin-bottom: 16px;
+  min-width: 0;
+  /* padding: 8px; */
+  /* background-color: darkgray; */
+}
+
+.SuccessBox {
+  display: flex;
+  justify-content: space-around;
+  /* text-align: center; */
+  padding: 32px;
+  background-color: green;
+  color: white;
+}
+
+/* For inline fieldshets > 599 */
+.fieldset-container {
+  display: flex;
+}
+
+.fieldset-container fieldset:not(:last-child) {
+  margin-right: 8px;
+}
+
+.tip {
+  /* margin-left: 8px; */
+  font-size: 8px;
+}
+.tip::before {
+  content: "Format Tip: "
+}
+
+fieldset.grow {
+  flex-grow: 1;
+}
+fieldset.no-shrink {
+  flex-shrink: 0;
+}
+fieldset.date {
+  width: 100px;
+}
+
+.fieldset-container.country-region {
+  flex-grow: 1;
+}
+
+.fieldset-container.country-region fieldset:last-child {
+    margin-right: 8px;
+  }
+
+@media (max-width: 599px) {
+  form {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 799px) {
+  .fieldset-container:not(.country-region) {
+    flex-direction: column;
+  }
+
+  .fieldset-container fieldset:not(:last-child) {
+    margin-right: 0px;
+  }
+
+  .fieldset-container.country-region fieldset:first-child {
+    flex-grow: 2;
+    margin-right: 8px;
+  }
+
+  .fieldset-container.country-region fieldset:last-child {
+    flex-grow: 1;
+    margin-right: 0px;
+  }
+
+  fieldset.grow {
+    flex-grow: 0;
+  }
+  fieldset.no-shrink {
+    flex-shrink: 0;
+  }
+  fieldset.date {
+    width: inherit;
+  }
+}
+
+
+
+legend, label {
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+
+legend.key {
+  margin-bottom: 16px;
+}
+
+fieldset * {
+  width: 100%;
+}
+
+div.textarea {
+  border: ridge 2px;
+  /* padding: 5px; */
+  min-height: 5em;
+  overflow: auto;
+}
+
+body:not(:-moz-handler-blocked) fieldset {
+  display: table-cell;
+}
+
+label {
+  display: block;
+}
+
+input[type=text], input[type=datalist], div.textarea {
+  background-color: white;
+  border: solid 1px lightgrey;
+  padding: 8px;
+}
+
+h1, h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  font-size: 14px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  /* opacity: .5; */
+}
+
+a:hover {
+  opacity: 1;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Card--header {
+  display: flex;
+  margin-bottom: auto;
+  align-items: baseline;
+
+}
+
+.Comment--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Custom classes */
+
+.Modal {
+  /* display: none; */
+  position: fixed;
+  z-index: 30;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 20px;
+}
+
+.Modal--content {
+  position: relative;
+  background: rgb(250, 250, 250);
+  margin: 0 auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  max-width: 400px;
+  height: auto;
+  /* max-height: 80vh; */
+}
+
+.Card {
+  margin-bottom: 20px;
+  background: rgb(250, 250, 250);
+}
+
+.Card--body {
+  padding: 16px;
+}
+
+.AboutMenu {
+  padding: 4px 8px;
+}
+
+/* Flyer */
+.Flyer--image {
+  width: 100%;
+}
+
+.Flyer--dates::before {
+  font-family: "FontAwesome";
+  content: '\f133';
+  margin-right: 4px;
+}
+
+.Avatar-small {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.Comment--handle {
+  margin-bottom: 0;
+  margin-left: 8px;
+}
+
+.Comment span {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.Flyer--icon-status.Tag {
+  background-color: red;
+  margin-right: 4px;
+}
+
+.red-bg {
+  background-color: red;
+}
+
+.Flyer--icon-type.Tag {
+  background-color: green;
+  margin-right: 4px;
+}
+
+.Tag {
+  display: inline-block;
+  line-height: 24px;
+  padding: 0px 8px;
+  color: white;
+  background-color: darkgray;
+  margin-left: 0;
+  margin-right: 1px;
+  margin-bottom: 1px;
+}
+
+.Card--header i {
+  line-height: 24px;
+  font-size: 22px;
+}
+
+.Venue--icon {
+  color: orangered;
+  margin-right: 4px;
+}
+
+
+.Venue-card--country img {
+  height: 10px;
+  margin-right: 2px;
+}
+
+.Venue-card--address i {
+  margin-right: 2px;
+}
+
+.Accordian {
+  padding: 8px 16px;
+  cursor: pointer;
+  width: 100%;
+  opacity: .5;
+}
+
+.Accordian.active, .Accordian:hover{
+  opacity: .5;
+}
+
+.Accordian:hover {
+  opacity: 1;
+}
+
+.Dropdown {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.Accordian--content, .Dropdown--content {
+  /* display: none; */
+  height: 0;
+  overflow: hidden;
+}
+
+.Accordian--content *, .Dropdown--content * {
+  overflow: inherit
+}
+
+
+.Comments {
+  padding-left: 16px;
+  padding-right: 16px;
+
+}
+
+.Comment {
+  border-top: solid 1px dimgrey;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
