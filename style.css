@@ -19,6 +19,29 @@ body {
   font-size: 12px;
 }
 
+a {
+   /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* *.profile-color {
+  background-color: rgb(46, 46, 46)
+  color: white;
+} */
+
 .App {
   display: flex;
   position: fixed;
@@ -53,18 +76,34 @@ body {
 }
 
 .Main--content {
-  margin: 24px;
+  margin: 16px;
+}
+
+.Main--content--feed-header {
+  margin-bottom: 16px;
+  color: white;
+  font-weight: normal;
+}
+
+.Main--content.no-margin {
+  margin: 0;
 }
 
 @media (max-width: 599px) {
   .Main--content {
     margin: 16px;
   }
+
+  .Main--content.no-margin {
+  margin: 0;
+}
 }
 
 .SectionNav {
   display: flex;
   justify-content: space-between;
+  position: sticky;
+  top: 1px;
 }
 
 .SectionNavLinks li {
@@ -140,12 +179,15 @@ li.filler {
   margin-top: 1px;
   margin-bottom: 1px;
   color: white;
-  font-weight: normal;
   height: 66px;
   display: flex;
   align-items: center;
   background-color: rgb(46, 46, 46);
   width: 100%;
+}
+
+.Main--header.dashboard-header {
+  height: 133px;
 }
 
 .Main--header * {
@@ -155,17 +197,38 @@ li.filler {
 
 .Main--header--nav-container {
   position: relative;
-  top: -66px;
+  top: -133px;
   height: 0;
 }
+
+.Main--header--nav-container.breadcrumb {
+  top: -66px;
+}
+
+.Main--header--nav-container.breadcrumb a:after {
+  content: " >";
+}
+
 .Main--header--nav {
   display: flex;
   flex-shrink: 1;
-
   justify-content: flex-end;
   /* position: absolute; */
   right: 1px;
   top: 1px;
+}
+
+.Main--header--title {
+  font-weight: normal;
+}
+
+.dashboard-header-container > h1 {
+  position: relative;
+  bottom: -33px;
+}
+
+.dashboard-header-container.avatar-section {
+  margin-top: auto;
 }
 
 .absolute {
@@ -178,10 +241,16 @@ li.filler {
 }
 
 .Main--avatar {
-  width: 44px;
-  height: 44px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   margin-right: 4px;
+}
+
+.Main--avatar.edit {
+  /* border-radius: 0; */
+  /* width: 60px;
+  height: 60px; */
 }
 
 .username::before {
@@ -189,11 +258,10 @@ li.filler {
 }
 
 @media (max-width: 599px) {
-  .Main--avatar {
+  /* .Main--avatar {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-  }
+  } */
 
   .Main--header {
     padding: 12px;
@@ -276,7 +344,15 @@ li.filler {
 form {
   padding: 32px;
   background-color: whitesmoke;
+  max-width: 600px;
 }
+
+form.profile-color {
+  background-color: rgb(46, 46, 46);
+  color: white
+}
+
+
 
 legend {
   padding: 0;
@@ -299,6 +375,10 @@ fieldset {
   padding: 32px;
   background-color: green;
   color: white;
+}
+
+.profile-blue {
+  background-color: blue;
 }
 
 /* For inline fieldshets > 599 */
@@ -343,13 +423,22 @@ fieldset.date {
     margin-right: 8px;
   }
 
+@media (min-width: 799px){
+  /* form > * {
+    max-width: 666px;
+    margin-left: auto;
+    margin-right: auto;
+  } */
+
+}
+
 @media (max-width: 599px) {
   form {
     padding: 24px;
   }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 599px) {
   .fieldset-container:not(.country-region) {
     flex-direction: column;
   }
@@ -411,13 +500,36 @@ body:not(:-moz-handler-blocked) fieldset {
 }
 
 label {
-  display: block;
+  display: inline-block;
 }
 
 input[type=text], input[type=datalist], input[type=password], input[type=email], div.textarea {
   background-color: white;
   border: solid 1px lightgrey;
   padding: 8px;
+}
+/*
+input[type="file"] {
+  display: none;
+} */
+.ImageFileButton {
+  width: fit-content;
+}
+
+.ImageFileButton * {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ImageFileButton > label > div > span {
+  color: white;
+  /* text-align: center; */
+  justify-content: center;
+  font-size: 10px;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(175deg, rgba(0, 0, 0, .7), rgba(0, 0, 0, .5));
 }
 
 h1, h2{
@@ -460,6 +572,12 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.flex-center-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .Card--header {
