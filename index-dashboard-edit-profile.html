@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="punk and metal forum">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <title>Goat's Forum</title>
+</head>
+
+<body>
+  <div class="App">
+    <div class="Menu">
+      <div class="Menu--pal">
+        <a href="./index-home.html">
+          <div class="Menu--pal--btn">
+            <img src="./assets/pentagram-icon.svg" alt="pentagram icon">
+          </div>
+        </a>
+        <a href="./index-dashboard.html">
+          <div class="Menu--pal--btn active">
+            <div class="Avatar-small" style="
+                background: url(./assets/default-avatar.jpg) no-repeat center center;
+                  background-size: cover;
+                  -webkit-background-size: cover;
+                  -moz-background-size: cover;
+                  -o-background-size: cover;
+                ">
+            </div>
+            <!-- <img class="Avatar-small" src="./assets/avatar-a.jpg" alt="killeraliens avatar"> -->
+          </div>
+        </a>
+        <a href="./index-create-fest.html">
+          <div class="Menu--pal--btn">
+            <span><i class="fa fa-file"></i><br />+FLIER</span>
+          </div>
+        </a>
+        <a href="./index-create-venue.html">
+          <div class="Menu--pal--btn">
+            <span><i class="fa fa-map-pin"></i><br />+VENUE</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="Main">
+      <header class="Main--header dashboard-header">
+        <!-- <div class="flex-center-between">
+          <div class="Main--avatar" style="
+              background: url(./assets/default-avatar.jpg) no-repeat center center;
+              background-size: cover;
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+            ">
+          </div>
+        </div> -->
+        <div class="dashboard-header-container">
+          <h1 class="Main--header--title">Edit Profile</h1>
+        </div>
+      </header>
+      <div class="Main--header--nav-container">
+        <div class="Main--header--nav">
+          <a class="Main--header--nav--link SectionNav--link" href="./index-dashboard.html">Cancel</a>
+          <a class="Main--header--nav--link SectionNav--link" href="./index-edit-settings.html">Settings</a>
+          <!-- <a class="Main--header--nav--link" href="./index.html">Sign Out</a> -->
+        </div>
+      </div>
+      <!-- <div class="Main--header Dropdown--content">
+        <p>Some text mokdfsdfsdfasdjfas;dlkfasdifsadfsad</p>
+      </div> -->
+      <div class="Main--content">
+        <form action="./index-dashboard-edit-success.html" class="EditProfileForm profile-color">
+          <fieldset>
+            <div class="flex-center-between">
+              <div class="ImageFileButton">
+                <label for="avatarImage">
+                  <div
+                    type="image"
+                    class="Main--avatar edit"
+                    style="
+                      background: url(./assets/default-avatar.jpg) no-repeat center center;
+                      background-size: cover;
+                      -webkit-background-size: cover;
+                      -moz-background-size: cover;
+                      -o-background-size: cover;
+                    "
+                    alt="current avatar image"
+                  >
+                  <span>+IMAGE</span>
+                  </div>
+                </label>
+                <input
+                  id="avatarImage"
+                  name="avatarImage"
+                  type="file"
+                  class="sr-only"
+                  aria-label="upload avatar image"
+                />
+              </div>
+              <h2 class="Main--header--title username">killeraliens</h2>
+            </div>
+          </fieldset>
+          <div class="fieldset-container">
+            <div class="fieldset-container country-region">
+              <fieldset class="grow">
+                <label for="country">Country</label>
+                <select id="country" name="country" type="text">
+                  <option value="US">United States</option>
+                </select>
+              </fieldset>
+              <fieldset class="no-shrink">
+                <label for="region">Region</label>
+                <select id="region" name="region" type="text">
+                  <option value="AZ">AZ</option>
+                </select>
+              </fieldset>
+
+            </div>
+            <fieldset class="grow">
+              <label for="city">City</label>
+              <input id="city" name="city" type="text">
+            </fieldset>
+          </div>
+          <button type="submit">Submit</button>
+          <a href="./index-dashboard-start.html">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    let accordian = document.getElementsByClassName('Accordian')
+    let dropdown = document.getElementsByClassName('Dropdown')
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener('click', function () {
+        this.classList.toggle('active');
+        let dropdownContent = this.nextElementSibling;
+        dropdownContent.style.height === "100%"
+          ? dropdownContent.style.height = "0"
+          : dropdownContent.style.height = "100%";
+      })
+    }
+    for (i = 0; i < accordian.length; i++) {
+      const orginalText = accordian[i].innerHTML;
+      accordian[i].addEventListener("click", function () {
+        this.classList.toggle('active');
+        this.classList.contains('active')
+          ? this.innerHTML = "..."
+          : this.innerHTML = orginalText
+        let accordianContent = this.nextElementSibling;
+        // accordianContent.style.display === "block"
+        //   ? accordianContent.style.display = "none"
+        //   : accordianContent.style.display = "block";
+        accordianContent.style.height === "100%"
+          ? accordianContent.style.height = "0"
+          : accordianContent.style.height = "100%";
+      })
+    }
+  </script>
+</body>
+
+</html>
