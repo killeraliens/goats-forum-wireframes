@@ -343,7 +343,7 @@ li.filler {
 
 
 /* Forms */
-form:not(.Modal--content > form) {
+form {
   padding: 32px;
   background-color: whitesmoke;
   max-width: 600px;
@@ -437,7 +437,7 @@ fieldset.date {
 }
 
 @media (max-width: 599px) {
-  form:not(.Modal--content form) {
+  form {
     padding: 24px;
   }
 }
