@@ -340,12 +340,16 @@ li.filler {
   }
 }
 
+
+
 /* Forms */
-form {
+form:not(.Modal--content form) {
   padding: 32px;
   background-color: whitesmoke;
   max-width: 600px;
 }
+
+
 
 form.profile-color {
   background-color: rgb(46, 46, 46);
@@ -433,7 +437,7 @@ fieldset.date {
 }
 
 @media (max-width: 599px) {
-  form {
+  form:not(.Modal--content form) {
     padding: 24px;
   }
 }
@@ -604,8 +608,8 @@ a:hover {
   height: 100%;
   width: 100%;
   overflow: auto;
+  padding: 16px;
   background-color: rgba(0, 0, 0, .5);
-  padding: 20px;
 }
 
 .Modal--content {
@@ -618,7 +622,26 @@ a:hover {
   transform: translateY(-50%);
   max-width: 400px;
   height: auto;
-  /* max-height: 80vh; */
+  padding: 32px;
+  padding-bottom: 40px;
+  max-height: 80vh;
+}
+
+.Modal--content--body {
+    max-height: 60vh;
+    overflow: scroll;
+
+}
+
+.Modal--nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 8px;
+}
+
+.Modal--nav a {
+  padding: 0 4px;
 }
 
 .Card {
@@ -628,10 +651,6 @@ a:hover {
 
 .Card--body {
   padding: 16px;
-}
-
-.AboutMenu {
-  padding: 4px 8px;
 }
 
 /* Flyer */
