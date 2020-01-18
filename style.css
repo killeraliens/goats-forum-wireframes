@@ -847,9 +847,6 @@ a:hover {
   text-align: center;
 }
 
-.Landing .LandingNav, .Landing .SectionNav {
-  text-align: right;
-}
 
 
 
@@ -860,6 +857,11 @@ a:hover {
   padding: 32px;
   background-color: whitesmoke;
 }
+
+/* .section-container form {
+  max-width: 300px;
+  margin: 32px auto;
+} */
 
 @media (min-width: 399px) {
   .section-container {
