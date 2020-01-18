@@ -66,11 +66,28 @@ a {
   width: 100%;
 }
 
-.Menu--floating {
-  position: fixed;
-  right: 16px;
-  top: 16px;
+@media (max-width: 399px) {
+  /* .App {
+    flex-direction: column;
+  } */
+  .Menu {
+    position: fixed;
+    bottom: 0px;
+    height: auto;
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .Menu--pal {
+    flex-direction: row;
+  }
+
+  .Menu--pal > * {
+    width:100%;
+  }
+
 }
+
 
 .Main {
   width: 100%;
@@ -622,6 +639,10 @@ a:hover {
 
 }
 
+.Card ul {
+  padding: 0;
+}
+
 .Comment--header {
   display: flex;
   align-items: center;
@@ -807,13 +828,14 @@ a:hover {
   /* max-width: 600px; */
 }
 
-.Landing header {
+/* .Landing header {
   height: 30vh;
   margin: 0px;
-}
+} */
 
 .Landing footer, .Landing header {
   text-align: center;
+  justify-content: center;
   padding: 16px;
 }
 
@@ -821,12 +843,19 @@ a:hover {
   text-align: center;
 }
 
-.Landing nav {
+.LandingNav {
+  text-align: center;
+}
+
+.Landing .LandingNav, .Landing .SectionNav {
   text-align: right;
 }
 
+
+
 .section-container {
   margin: 0 16px;
+  margin-top: 16px;
   max-width: 400px;
   padding: 32px;
   background-color: whitesmoke;
@@ -835,6 +864,7 @@ a:hover {
 @media (min-width: 399px) {
   .section-container {
     margin: 0 auto;
+    margin-top: 16px;
     /* max-width: 600px; */
     /* padding: 48px; */
   }
