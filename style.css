@@ -343,7 +343,7 @@ li.filler {
 
 
 /* Forms */
-form {
+form:not(.Modal form) {
   padding: 32px;
   background-color: whitesmoke;
   max-width: 600px;
@@ -437,7 +437,7 @@ fieldset.date {
 }
 
 @media (max-width: 599px) {
-  form {
+  form:not(.Modal form) {
     padding: 24px;
   }
 }
@@ -769,3 +769,10 @@ a:hover {
   padding-bottom: 16px;
 }
 
+.Landing {
+  text-align: center;
+}
+
+.Landing header, .Landing section {
+  margin-bottom: 32px;
+}

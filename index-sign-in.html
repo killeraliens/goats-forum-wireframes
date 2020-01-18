@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,33 +10,31 @@
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <title>Goat's Forum</title>
 </head>
-
 <body>
   <div class="App">
     <div class="Modal">
       <div class="Modal--content">
-        <div class="Modal--content--body">
-          <h1>About</h1>
-          <p>
-            This is a community forum where you can post about
-            upcoming shows, venues, bands, and other relevant
-            information for live tours and concerts.
-          </p>
-          <p>
-            This project is in testing and development mode. It needs people like you to sign up.
-            If you come across any bugs, issues, or general improvements while using this site email ali@goatsguide.com.
-            If you are a developer and would like to contribute, email me!
-          </p>
-        </div>
+        <form id="SignInForm" action="./index-home.html">
+          <h1>Goat's Forum</h1>
+          <p>Add information on touring bands, venues, and events.</p>
+          <fieldset class="form-group">
+            <legend class="sr-only">Sign In</legend>
+            <label for="username">Username</label>
+            <input type="text" placeholder="killer">
+            <label for="username">Password</label>
+            <input type="password" >
+          </fieldset>
+          <button type="submit">Sign In</button>
+          <a href="./index-new-account.html">New Account</a>
+        </form>
         <div class="Modal--nav">
           <a href="./index.html">Welcome</a>
-          <a class="active" href="./index-about.html">About</a>
+          <a href="./index-about.html">About</a>
           <a href="./index-privacy.html">Privacy</a>
-          <a href="./index-sign-in.html">Sign In</a>
+          <!-- <a class="active" href="./index-sign-in.html">Sign In</a> -->
         </div>
       </div>
     </div>
   </div>
 </body>
-
 </html>
