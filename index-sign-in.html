@@ -12,29 +12,34 @@
 </head>
 <body>
   <div class="App">
-    <div class="Modal">
-      <div class="Modal--content">
-        <form id="SignInForm" action="./index-home.html">
-          <h1>Sign In</h1>
-          <p></p>
-          <!-- <p>Add information on touring bands, venues, and events.</p> -->
-          <!-- <p>Sign into your a</p> -->
-          <fieldset class="form-group">
-            <legend class="sr-only">Sign In</legend>
-            <label for="username">Username</label>
-            <input type="text" placeholder="killer">
-            <label for="username">Password</label>
-            <input type="password" >
-          </fieldset>
-          <button type="submit">Sign In</button>
-          <a href="./index-new-account.html">New Account</a>
-        </form>
-        <div class="Modal--nav">
-          <a href="./index.html">Welcome</a>
-          <a href="./index-about.html">About</a>
+    <div class="Landing">
+      <header role="banner">
+        <nav>
+          <a class="active" href="./index.html">Intro</a>
+          <a class="" href="./index-about.html">About</a>
           <!-- <a href="./index-privacy.html">Privacy</a> -->
-          <a class="active" href="./index-sign-in.html">Sign In</a>
-        </div>
+          <a href="./index-sign-in.html">Sign In</a>
+        </nav>
+        <p>[<em>placeholder for goat skull illustration</em>]</p>
+      </header>
+      <div class="section-container">
+        <section>
+          <form class="intro" id="SignInForm" action="./index-home.html">
+            <h1>Sign In</h1>
+            <p></p>
+            <!-- <p>Add information on touring bands, venues, and events.</p> -->
+            <!-- <p>Sign into your a</p> -->
+            <fieldset class="form-group">
+              <legend class="sr-only">Sign In</legend>
+              <label for="username">Username</label>
+              <input type="text" placeholder="killer">
+              <label for="username">Password</label>
+              <input type="password" >
+            </fieldset>
+            <button type="submit">Sign In</button>
+            <a href="./index-new-account.html">New Account</a>
+          </form>
+        </section>
       </div>
     </div>
   </div>

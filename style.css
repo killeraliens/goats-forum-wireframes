@@ -47,6 +47,7 @@ a {
   position: fixed;
   height: 100%;
   width: 100%;
+  overflow: scroll;
 }
 
 .Menu, .Main {
@@ -88,6 +89,8 @@ a {
 .Main--content.no-margin {
   margin: 0;
 }
+
+
 
 @media (max-width: 599px) {
   .Main--content {
@@ -190,7 +193,17 @@ li.filler {
   height: 133px;
 }
 
-.Main--header * {
+/* .Main--header.dashboard-header.active, .Main--header.dashboard-header.active * {
+  height: 0px;
+  padding: 0px;
+  overflow: hidden;
+} */
+.Main--header.dashboard-header.edit {
+  height: 0;
+  padding: 0;
+}
+
+.Main--header *:not(form *) {
   color: white;
   font-weight: normal;
 }
@@ -199,6 +212,12 @@ li.filler {
   position: relative;
   top: -133px;
   height: 0;
+}
+
+.Main--header--nav-container.edit {
+  position: absolute;
+  top: 1px;
+  right: 1px;
 }
 
 .Main--header--nav-container.breadcrumb {
@@ -282,7 +301,9 @@ li.filler {
 /* .SignOut:hover {
   background-color: red;
 } */
-
+.red {
+  background-color: orangered;
+}
 
 /* .Menu--pal--btn.active {
   background-color: none;
@@ -343,7 +364,8 @@ li.filler {
 
 
 /* Forms */
-form:not(.Modal form) {
+/* form:not(.Modal form) { */
+.Main--content form:not(.header-form) {
   padding: 32px;
   background-color: whitesmoke;
   max-width: 600px;
@@ -351,12 +373,19 @@ form:not(.Modal form) {
 
 
 
-form.profile-color {
+form.header-form {
   background-color: rgb(46, 46, 46);
-  color: white
+  color: white;
+  max-width: 100%;
+  padding: 16px;
+  padding-top: 54px;
 }
 
 
+
+form.header-form input {
+  color: black;
+}
 
 legend {
   padding: 0;
@@ -388,6 +417,7 @@ fieldset {
 /* For inline fieldshets > 599 */
 .fieldset-container {
   display: flex;
+  max-width: 600px;
 }
 
 /* .fieldset-container.fieldset-container:not(.country-region) {
@@ -437,7 +467,8 @@ fieldset.date {
 }
 
 @media (max-width: 599px) {
-  form:not(.Modal form) {
+
+  .Main--content form:not(.header-form) {
     padding: 24px;
   }
 }
@@ -770,9 +801,47 @@ a:hover {
 }
 
 .Landing {
+  margin: 0 auto;
+  width: 100%;
+  /* width: 400px; */
+  /* max-width: 600px; */
+}
+
+.Landing header {
+  height: 30vh;
+  margin: 0px;
+}
+
+.Landing footer, .Landing header {
+  text-align: center;
+  padding: 16px;
+}
+
+.Landing h1, .Landing h2 {
   text-align: center;
 }
 
-.Landing header, .Landing section {
+.Landing nav {
+  text-align: right;
+}
+
+.section-container {
+  margin: 0 16px;
+  max-width: 400px;
+  padding: 32px;
+  background-color: whitesmoke;
+}
+
+@media (min-width: 399px) {
+  .section-container {
+    margin: 0 auto;
+    /* max-width: 600px; */
+    /* padding: 48px; */
+  }
+}
+
+.Landing section:not(:last-child) {
   margin-bottom: 32px;
 }
+
+

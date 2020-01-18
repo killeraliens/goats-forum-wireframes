@@ -13,29 +13,34 @@
 </head>
 <body>
   <div class="App">
-    <div class="Modal">
-      <div class="Modal--content">
-        <form id="SignUp" action="./index-dashboard-start.html">
-          <h1>New Account</h1>
-          <p>Your email will only be used for account purposes.</p>
-          <fieldset class="form-group">
-            <legend class="sr-only">Sign Up</legend>
-            <label for="email">Email</label>
-            <input type="text" placeholder="email@email.com">
-            <label for="username">Username</label>
-            <input type="text" placeholder="killer">
-            <label for="username">Password</label>
-            <input type="password">
-          </fieldset>
-          <button type="submit" >Sign Up</button>
-          <!-- <a href="./index-sign-in.html">Sign In</a> -->
-        </form>
-        <div class="Modal--nav">
-          <a href="./index.html">Welcome</a>
-          <a href="./index-about.html">About</a>
+    <div class="Landing">
+      <header role="banner">
+        <nav>
+          <a class="active" href="./index.html">Intro</a>
+          <a class="" href="./index-about.html">About</a>
           <!-- <a href="./index-privacy.html">Privacy</a> -->
           <a href="./index-sign-in.html">Sign In</a>
-        </div>
+        </nav>
+        <p>[<em>placeholder for goat skull illustration</em>]</p>
+      </header>
+      <div class="section-container">
+        <section>
+          <form class="intro" id="SignUp" action="./index-dashboard-start.html">
+            <h1>New Account</h1>
+            <p>Your email will only be used for account purposes.</p>
+            <fieldset class="form-group">
+              <legend class="sr-only">Sign Up</legend>
+              <label for="email">Email</label>
+              <input type="text" placeholder="email@email.com">
+              <label for="username">Username</label>
+              <input type="text" placeholder="killer">
+              <label for="username">Password</label>
+              <input type="password">
+            </fieldset>
+            <button type="submit" >Sign Up</button>
+            <a href="./index-sign-in.html">Sign In</a>
+          </form>
+        </section>
       </div>
     </div>
   </div>
