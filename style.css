@@ -474,6 +474,68 @@ fieldset.date {
     margin-right: 8px;
   }
 
+.EventFieldset.condensed {
+  height: 0;
+  overflow: hidden;
+}
+
+ul.EventInput--preview {
+   /* padding-top: 8px;
+  padding-bottom: 8px; */
+}
+
+ul.EventInput--preview li {
+  margin-bottom: 16px;
+}
+
+ul.EventInput--preview li > * {
+  display: flex;
+}
+
+.EventInput--preview li span i {
+  color: darkgrey;
+}
+
+.date-i::before {
+  font-family: "FontAwesome";
+  content: '\f133';
+  width: 20px;
+  /* margin-right: 4px; */
+  color: darkgray;
+}
+
+.city-i::before {
+  font-family: "FontAwesome";
+  content: '\f041';
+  width: 20px;
+  /* margin-right: 4px; */
+  color: darkgray;
+}
+
+.venue-i::before {
+  font-family: "FontAwesome";
+  content: '\f276';
+  width: 20px;
+  /* margin-right: 4px; */
+  color: darkgray;
+}
+
+.delete-i {
+  /* margin-right: 32px; */
+  position: relative;
+  left: -32px;
+  height: 0;
+  color: orangered;
+}
+
+.EventFieldset {
+  height: auto;
+  overflow: visible;
+  background: lightgray;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
 @media (min-width: 799px){
   /* form > * {
     max-width: 666px;
@@ -484,7 +546,9 @@ fieldset.date {
 }
 
 @media (max-width: 599px) {
-
+   /* ul.EventInput--preview {
+     font-size: 10px;
+   } */
   .Main--content form:not(.header-form) {
     padding: 24px;
   }
