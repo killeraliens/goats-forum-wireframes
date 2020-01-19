@@ -13,29 +13,51 @@
 </head>
 <body>
   <div class="App">
-    <div class="Modal">
-      <div class="Modal--content">
-        <form id="SignUp" action="./index-dashboard-start.html">
-          <h1>New Account</h1>
-          <p>Your email will only be used for account purposes.</p>
-          <fieldset class="form-group">
-            <legend class="sr-only">Sign Up</legend>
-            <label for="email">Email</label>
-            <input type="text" placeholder="email@email.com">
-            <label for="username">Username</label>
-            <input type="text" placeholder="killer">
-            <label for="username">Password</label>
-            <input type="password">
-          </fieldset>
-          <button type="submit" >Sign Up</button>
-          <!-- <a href="./index-sign-in.html">Sign In</a> -->
-        </form>
-        <div class="Modal--nav">
-          <a href="./index.html">Welcome</a>
-          <a href="./index-about.html">About</a>
-          <!-- <a href="./index-privacy.html">Privacy</a> -->
+    <div class="Landing">
+      <!-- <header role="banner">
+        <nav>
+          <a class="active" href="./index.html">Intro</a>
+          <a class="" href="./index-about.html">About</a>
           <a href="./index-sign-in.html">Sign In</a>
+        </nav>
+        <p>[<em>placeholder for goat skull illustration</em>]</p>
+      </header> -->
+      <header class="Main--header dashboard-header">
+        <p>[<em>placeholder for goat skull illustration</em>]</p>
+      </header>
+      <div class="Main--header--nav-container">
+        <div class="Main--header--nav">
+          <!-- <a class="SectionNav--link active" href="./index.html">Intro</a>
+                      <a class="Main--header--nav--link SectionNav--link" href="./index-about.html">About</a> -->
+          <!-- <a class="Main--header--nav--link SectionNav--link" href="./index-dashboard-edit-settings.html">Settings</a> -->
+          <a class="Main--header--nav--link SectionNav--link active" href="./index-sign-in.html">Sign In</a>
         </div>
+      </div>
+      <div class="SectionNav">
+        <ul class="SectionNavLinks">
+          <li><a class="SectionNav--link " href="./index.html">Intro</a></li><!--
+       --><li><a class="SectionNav--link " href="./index-about.html">About</a></li><!--
+       -->
+        </ul>
+      </div>
+      <div class="section-container">
+        <section>
+          <form class="intro" id="SignUp" action="./index-dashboard-start.html">
+            <h1>New Account</h1>
+            <p>Your email will only be used for account purposes.</p>
+            <fieldset class="form-group">
+              <legend class="sr-only">Sign Up</legend>
+              <label for="email">Email</label>
+              <input type="text" placeholder="email@email.com">
+              <label for="username">Username</label>
+              <input type="text" placeholder="killer">
+              <label for="username">Password</label>
+              <input type="password">
+            </fieldset>
+            <button type="submit" >Sign Up</button>
+            <a href="./index-sign-in.html">Sign In</a>
+          </form>
+        </section>
       </div>
     </div>
   </div>

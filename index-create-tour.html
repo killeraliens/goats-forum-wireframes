@@ -44,10 +44,10 @@
       </header>
       <div class="SectionNav">
         <ul class="SectionNavLinks">
-          <li><a class="SectionNav--link active" href="./index-create-fest.html">Single Show</a></li><!--
-      --><li><a class="SectionNav--link" href="./index-create-tour.html">Tour</a></li><!--
-      --><li><a class="SectionNav--link" href="./index-create-festival.html">Festival</a></li><!--
-      --><li class="filler"></li>
+          <li><a class="SectionNav--link" href="./index-create-fest.html">Single Show</a></li><!--
+       --><li><a class="SectionNav--link  active" href="./index-create-tour.html">Tour</a></li><!--
+       --><li><a class="SectionNav--link" href="./index-create-festival.html">Festival</a></li><!--
+       -->
         </ul>
       </div>
       <div class="Main--content">
@@ -61,10 +61,24 @@
           </fieldset>
           <fieldset>
             <label for="headline">Headline*</label>
-            <input type="text" placeholder="Fest Name" >
+            <input type="text" placeholder="Fest Name">
           </fieldset>
 
-          <div class="EventFieldset expanded">
+          <ul class="EventInput--preview">
+            <li class="sr-only sampleE">
+              <i class="fa fa-minus-circle delete-i"></i>
+              <span class="date-i">4/21</span>
+              <span class="city-i">Truth or Consequences, NM</span>
+              <span class="venue-i">Raymond's Lounge</span>
+            </li>
+            <li class="sr-only sampleE">
+              <i class="fa fa-minus-circle delete-i"></i>
+              <span class="date-i">4/22</span>
+              <span class="city-i">Mesa, AZ</span>
+              <span class="venue-i">Club Red</span>
+            </li>
+          </ul>
+          <div class="EventFieldset">
             <div class="fieldset-container">
               <fieldset class="date">
                 <label for="date">Date</label>
@@ -100,8 +114,10 @@
                 <input id="city" name="city" type="text">
               </fieldset>
             </div>
+            <button id="AddTourBtn" class="EventFieldset--add-btn tour">
+              Add Tour Stop
+            </button>
           </div>
-
           <!-- <div class="fieldset-container display-event-array">
             <legend>Date - City, Region/Country - Venue Name</legend>
           </div> -->
@@ -144,24 +160,25 @@
 
 
   <script>
-    let accordian = document.getElementsByClassName('Accordian')
 
-    for (i = 0; i < accordian.length; i++) {
-      const orginalText = accordian[i].innerHTML;
-      accordian[i].addEventListener("click", function () {
-        this.classList.toggle('active');
-        this.classList.contains('active')
-          ? this.innerHTML = "..."
-          : this.innerHTML = orginalText
-        let accordianContent = this.nextElementSibling;
-        // accordianContent.style.display === "block"
-        //   ? accordianContent.style.display = "none"
-        //   : accordianContent.style.display = "block";
-        accordianContent.style.height === "100%"
-          ? accordianContent.style.height = "0"
-          : accordianContent.style.height = "100%";
+    let addEventBtn = document.getElementById('AddTourBtn')
+    let sampleEvents = document.getElementsByClassName('sampleE')
+    addEventBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      sampleEvents[0].classList.contains('sr-only')
+        ? sampleEvents[0].classList.remove('sr-only')
+        : sampleEvents[1].classList.contains('sr-only')
+        ? sampleEvents[1].classList.remove('sr-only')
+        : console.log("no more samples to add")
+    })
+
+    let deleteI = document.getElementsByClassName('delete-i')
+    for (i = 0; i < deleteI.length; i++) {
+      deleteI[i].addEventListener("click", function () {
+        this.parentElement.classList.add('sr-only')
       })
     }
+
   </script>
 </body>
 

@@ -47,6 +47,7 @@ a {
   position: fixed;
   height: 100%;
   width: 100%;
+  overflow: scroll;
 }
 
 .Menu, .Main {
@@ -65,11 +66,28 @@ a {
   width: 100%;
 }
 
-.Menu--floating {
-  position: fixed;
-  right: 16px;
-  top: 16px;
+@media (max-width: 399px) {
+  /* .App {
+    flex-direction: column;
+  } */
+  .Menu {
+    position: fixed;
+    bottom: 0px;
+    height: auto;
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .Menu--pal {
+    flex-direction: row;
+  }
+
+  .Menu--pal > * {
+    width:100%;
+  }
+
 }
+
 
 .Main {
   width: 100%;
@@ -88,6 +106,8 @@ a {
 .Main--content.no-margin {
   margin: 0;
 }
+
+
 
 @media (max-width: 599px) {
   .Main--content {
@@ -190,7 +210,17 @@ li.filler {
   height: 133px;
 }
 
-.Main--header * {
+/* .Main--header.dashboard-header.active, .Main--header.dashboard-header.active * {
+  height: 0px;
+  padding: 0px;
+  overflow: hidden;
+} */
+.Main--header.dashboard-header.edit {
+  height: 0;
+  padding: 0;
+}
+
+.Main--header *:not(form *) {
   color: white;
   font-weight: normal;
 }
@@ -199,6 +229,12 @@ li.filler {
   position: relative;
   top: -133px;
   height: 0;
+}
+
+.Main--header--nav-container.edit {
+  position: absolute;
+  top: 1px;
+  right: 1px;
 }
 
 .Main--header--nav-container.breadcrumb {
@@ -282,7 +318,9 @@ li.filler {
 /* .SignOut:hover {
   background-color: red;
 } */
-
+.red {
+  background-color: orangered;
+}
 
 /* .Menu--pal--btn.active {
   background-color: none;
@@ -343,7 +381,8 @@ li.filler {
 
 
 /* Forms */
-form:not(.Modal form) {
+/* form:not(.Modal form) { */
+.Main--content form:not(.header-form) {
   padding: 32px;
   background-color: whitesmoke;
   max-width: 600px;
@@ -351,12 +390,19 @@ form:not(.Modal form) {
 
 
 
-form.profile-color {
+form.header-form {
   background-color: rgb(46, 46, 46);
-  color: white
+  color: white;
+  max-width: 100%;
+  padding: 16px;
+  padding-top: 54px;
 }
 
 
+
+form.header-form input {
+  color: black;
+}
 
 legend {
   padding: 0;
@@ -388,6 +434,7 @@ fieldset {
 /* For inline fieldshets > 599 */
 .fieldset-container {
   display: flex;
+  max-width: 600px;
 }
 
 /* .fieldset-container.fieldset-container:not(.country-region) {
@@ -416,7 +463,7 @@ fieldset.no-shrink {
   flex-shrink: 0;
 }
 fieldset.date {
-  width: 100px;
+  width: 60px;
 }
 
 .fieldset-container.country-region {
@@ -426,6 +473,68 @@ fieldset.date {
 .fieldset-container.country-region fieldset:last-child {
     margin-right: 8px;
   }
+
+.EventFieldset.condensed {
+  height: 0;
+  overflow: hidden;
+}
+
+ul.EventInput--preview {
+   /* padding-top: 8px;
+  padding-bottom: 8px; */
+}
+
+ul.EventInput--preview li {
+  margin-bottom: 16px;
+}
+
+ul.EventInput--preview li > * {
+  display: flex;
+}
+
+.EventInput--preview li span i {
+  color: darkgrey;
+}
+
+.date-i::before {
+  font-family: "FontAwesome";
+  content: '\f133';
+  width: 20px;
+  /* margin-right: 4px; */
+  color: darkgray;
+}
+
+.city-i::before {
+  font-family: "FontAwesome";
+  content: '\f041';
+  width: 20px;
+  /* margin-right: 4px; */
+  color: darkgray;
+}
+
+.venue-i::before {
+  font-family: "FontAwesome";
+  content: '\f276';
+  width: 20px;
+  /* margin-right: 4px; */
+  color: darkgray;
+}
+
+.delete-i {
+  /* margin-right: 32px; */
+  position: relative;
+  left: -32px;
+  height: 0;
+  color: orangered;
+}
+
+.EventFieldset {
+  height: auto;
+  overflow: visible;
+  background: lightgray;
+  padding: 16px;
+  margin-bottom: 16px;
+}
 
 @media (min-width: 799px){
   /* form > * {
@@ -437,7 +546,10 @@ fieldset.date {
 }
 
 @media (max-width: 599px) {
-  form:not(.Modal form) {
+   /* ul.EventInput--preview {
+     font-size: 10px;
+   } */
+  .Main--content form:not(.header-form) {
     padding: 24px;
   }
 }
@@ -589,6 +701,10 @@ a:hover {
   margin-bottom: auto;
   align-items: baseline;
 
+}
+
+.Card ul {
+  padding: 0;
 }
 
 .Comment--header {
@@ -770,9 +886,58 @@ a:hover {
 }
 
 .Landing {
+  margin: 0 auto;
+  width: 100%;
+  /* width: 400px; */
+  /* max-width: 600px; */
+}
+
+/* .Landing header {
+  height: 30vh;
+  margin: 0px;
+} */
+
+.Landing footer, .Landing header {
+  text-align: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.Landing h1, .Landing h2 {
   text-align: center;
 }
 
-.Landing header, .Landing section {
+.LandingNav {
+  text-align: center;
+}
+
+
+
+
+.section-container {
+  margin: 0 16px;
+  margin-top: 16px;
+  max-width: 400px;
+  padding: 32px;
+  background-color: whitesmoke;
+}
+
+/* .section-container form {
+  max-width: 300px;
+  margin: 32px auto;
+} */
+
+@media (min-width: 399px) {
+  .section-container {
+    margin: 0 auto;
+    margin-top: 16px;
+    /* max-width: 600px; */
+    /* padding: 48px; */
+  }
+}
+
+.Landing section:not(:last-child) {
   margin-bottom: 32px;
 }
+
+

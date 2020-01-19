@@ -21,10 +21,10 @@
             <img src="./assets/pentagram-icon.svg" alt="pentagram icon">
           </div>
         </a>
-        <a href="./index-dashboard.html">
+        <a href="./index-dashboard">
           <div class="Menu--pal--btn active">
             <div class="Avatar-small" style="
-                background: url(./assets/default-avatar.jpg) no-repeat center center;
+                background: url(./assets/avatar-a.jpg) no-repeat center center;
                   background-size: cover;
                   -webkit-background-size: cover;
                   -moz-background-size: cover;
@@ -47,78 +47,36 @@
       </div>
     </div>
     <div class="Main">
-      <header class="Main--header dashboard-header edit">
-        <div class="dashboard-header-container">
-          <!-- <h1 class="Main--header--title">Edit Profile</h1> -->
+      <header class="Main--header dashboard-header">
+        <div class="dashboard-header-container avatar-section ">
+          <div class="flex-center-between">
+            <div class="Main--avatar" style="
+                background: url(./assets/avatar-a.jpg) no-repeat center center;
+                background-size: cover;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+              ">
+            </div>
+            <form action="./index-dashboard-edit-settings.html">
+               <label for="username" class="sr-only">Username</label>
+               <input type="text" value="killeraliens" style="color: black;" >
+            </form>
+            <!-- <h1 class="Main--header--title username">killeraliens</h1> -->
+          </div>
+
         </div>
       </header>
-      <div class="Main--header--nav-container edit">
+      <div class="Main--header--nav-container">
         <div class="Main--header--nav">
-          <a class="Main--header--nav--link SectionNav--link active" href="./index-dashboard.html">Edit Profile</a>
-          <!-- <a class="Main--header--nav--link SectionNav--link" href="./index-dashboard-edit-settings.html">Settings</a> -->
+          <a class="Main--header--nav--link SectionNav--link" href="./index-dashboard-edit-profile.html">Edit
+            Profile</a>
+          <a class="Main--header--nav--link SectionNav--link active" href="./index-dashboard-edit-settings.html">Settings</a>
           <a class="Main--header--nav--link SectionNav--link" href="./index.html">Sign Out</a>
         </div>
       </div>
-      <!-- <div class="Main--header Dropdown--content">
-        <p>Some text mokdfsdfsdfasdjfas;dlkfasdifsadfsad</p>
-      </div> -->
-      <div class="Main--content no-margin">
-        <form action="./index-dashboard-edit-success.html" class="EditProfileForm header-form">
-          <fieldset>
-            <div class="flex-center-between">
-              <div class="ImageFileButton">
-                <label for="avatarImage">
-                  <div
-                    type="image"
-                    class="Main--avatar edit"
-                    style="
-                      background: url(./assets/default-avatar.jpg) no-repeat center center;
-                      background-size: cover;
-                      -webkit-background-size: cover;
-                      -moz-background-size: cover;
-                      -o-background-size: cover;
-                    "
-                    alt="current avatar image"
-                  >
-                  <span>+IMAGE</span>
-                  </div>
-                </label>
-                <input
-                  id="avatarImage"
-                  name="avatarImage"
-                  type="file"
-                  class="sr-only"
-                  aria-label="upload avatar image"
-                />
-              </div>
-              <h2 class="Main--header--title username">killeraliens</h2>
-            </div>
-          </fieldset>
-          <div class="fieldset-container">
-            <div class="fieldset-container country-region">
-              <fieldset class="grow">
-                <label for="country">Country</label>
-                <select id="country" name="country" type="text">
-                  <option value="US">United States</option>
-                </select>
-              </fieldset>
-              <fieldset class="no-shrink">
-                <label for="region">Region</label>
-                <select id="region" name="region" type="text">
-                  <option value="AZ">AZ</option>
-                </select>
-              </fieldset>
 
-            </div>
-            <fieldset class="grow">
-              <label for="city">City</label>
-              <input id="city" name="city" type="text">
-            </fieldset>
-          </div>
-          <button type="submit">Submit</button>
-          <a href="./index-dashboard-start.html">Cancel</a>
-        </form>
-      </div>
+
     </div>
   </div>
 
