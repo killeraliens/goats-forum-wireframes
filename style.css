@@ -78,6 +78,10 @@ a {
     padding-bottom: 0;
   }
 
+  .Main {
+    padding-bottom: 76px;
+  }
+
   .Menu--pal {
     flex-direction: row;
   }
