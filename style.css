@@ -463,7 +463,7 @@ fieldset.no-shrink {
   flex-shrink: 0;
 }
 fieldset.date {
-  width: 100px;
+  width: 60px;
 }
 
 .fieldset-container.country-region {

@@ -44,10 +44,10 @@
       </header>
       <div class="SectionNav">
         <ul class="SectionNavLinks">
-          <li><a class="SectionNav--link active" href="./index-create-fest.html">Single Show</a></li><!--
+          <li><a class="SectionNav--link" href="./index-create-fest.html">Single Show</a></li><!--
       --><li><a class="SectionNav--link" href="./index-create-tour.html">Tour</a></li><!--
-      --><li><a class="SectionNav--link" href="./index-create-festival.html">Festival</a></li><!--
-      --><li class="filler"></li>
+      --><li><a class="SectionNav--link  active" href="./index-create-festival.html">Festival</a></li><!--
+      -->
         </ul>
       </div>
       <div class="Main--content">
@@ -61,22 +61,29 @@
           </fieldset>
           <fieldset>
             <label for="headline">Headline*</label>
-            <input type="text" placeholder="Fest Name" >
+            <input type="text" placeholder="Fest Name">
           </fieldset>
 
-          <div class="EventFieldset expanded">
+          <div class="EventFieldset">
             <div class="fieldset-container">
-              <fieldset class="date">
-                <label for="date">Date</label>
-                <input id="date" name="date" type="text" placeholder="mm/dd">
-              </fieldset>
-              <fieldset class="grow">
-                <label for="venueName">Venue Name</label>
-                <input type="text" list="venueName">
-                <datalist id="venueName" name="venueName" type="text">
-                  <option value="Club Red">
-                </datalist>
-              </fieldset>
+              <div class="fieldset-container country-region">
+                <fieldset class="date start-date">
+                  <label for="startDate">Start Date</label>
+                  <input id="startDate" name="startDate" type="text" placeholder="mm/dd">
+                </fieldset>
+                <fieldset class="date end-date">
+                  <label for="endDate">End Date</label>
+                  <input id="endDate" name="endDate" type="text" placeholder="mm/dd">
+                </fieldset>
+                <fieldset class="grow">
+                  <label for="venueName">Venue Name</label>
+                  <input type="text" list="venueName">
+                  <datalist id="venueName" name="venueName" type="text">
+                    <option value="Club Red">
+                  </datalist>
+                </fieldset>
+
+              </div>
             </div>
 
             <div class="fieldset-container">
